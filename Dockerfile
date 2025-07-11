@@ -25,6 +25,8 @@ RUN apt-get -y update && apt-get -y install \
   dovecot-solr \
   dovecot-sqlite \
   dovecot-submissiond \
+  python3 \
+  redis-tools \
   ca-certificates \
   ssl-cert && \
   rm -rf /var/lib/apt/lists && \
