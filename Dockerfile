@@ -9,7 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.gpg /etc/apt/keyrings/dovecot.gpg
 ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.list /etc/apt/sources.list.d
 
-RUN apt-get -y install gnupg2
+RUN apt-get -y install gnupg gnupg2
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 18A348AEED409DA1
 
 RUN apt-get -y update && apt-get -y install \
