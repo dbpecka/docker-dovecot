@@ -29,6 +29,7 @@ RUN apt-get -y update && apt-get -y install \
   dovecot-submissiond \
   python3 \
   redis-tools \
+  gnupg2 \
   ca-certificates \
   ssl-cert && \
   rm -rf /var/lib/apt/lists && \
