@@ -6,8 +6,8 @@ ENV container=docker \
     LC_ALL=C
 ARG DEBIAN_FRONTEND=noninteractive
 
-ADD dovecot.gpg /etc/apt/keyrings/dovecot.gpg
-ADD dovecot.list /etc/apt/sources.list.d
+ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.gpg /etc/apt/keyrings/dovecot.gpg
+ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.list /etc/apt/sources.list.d
 
 RUN apt-get -y update && apt-get -y install \
   tini \
@@ -41,7 +41,7 @@ RUN apt-get -y update && apt-get -y install \
   ln -s /etc/ssl/certs/ssl-cert-snakeoil.pem /etc/dovecot/cert.pem && \
   ln -s /etc/ssl/private/ssl-cert-snakeoil.key /etc/dovecot/key.pem
 
-ADD dovecot.conf /etc/dovecot/dovecot.conf
+ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.conf /etc/dovecot/dovecot.conf
 
 EXPOSE 24
 EXPOSE 110
