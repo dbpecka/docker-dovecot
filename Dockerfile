@@ -6,11 +6,11 @@ ENV container=docker \
     LC_ALL=C
 ARG DEBIAN_FRONTEND=noninteractive
 
-ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.gpg /etc/apt/keyrings/dovecot.gpg
-ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.list /etc/apt/sources.list.d
-
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils gnupg
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 18A348AEED409DA1
+
+ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.gpg /etc/apt/keyrings/dovecot.gpg
+ADD https://raw.githubusercontent.com/dbpecka/docker-dovecot/master/dovecot.list /etc/apt/sources.list.d
 
 RUN apt-get -y install \
   tini \
